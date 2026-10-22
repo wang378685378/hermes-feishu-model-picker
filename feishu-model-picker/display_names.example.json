@@ -1,0 +1,5 @@
+{
+  "_comment": "Optional display-name overrides: raw model id -> button label. Hot-reloaded (no gateway restart). Note: the shipped plugin shows raw model IDs by default; re-enable aliases in _display_name() if you want these applied. Example entries below — replace with your own model ids.",
+  "my-fast-model": "🚀 Fast",
+  "my-pro-model": "🧠 Pro"
+}

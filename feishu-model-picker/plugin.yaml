@@ -1,0 +1,22 @@
+name: feishu-model-picker
+version: 1.0.0
+description: >
+  Two-tier model picker for Feishu (Lark) bot custom menus. A menu item
+  sends "/model pick <provider>" as text; the plugin intercepts it via the
+  pre_gateway_dispatch hook and replies with an interactive Feishu card
+  listing that provider's models as buttons. Clicking a button switches the
+  active model+provider (persisted to config.yaml, no gateway restart) and
+  posts an acknowledgement card. Multi-profile safe: each profile's gateway
+  process reads its own HERMES_HOME/config.yaml.
+author: feishu-model-picker contributors
+license: MIT
+kind: standalone
+provides_hooks:
+  - pre_gateway_dispatch
+optional_env:
+  - name: FEISHU_PICKER_MODEL_DISPLAY_NAMES
+    description: >
+      Optional JSON map of raw model-id -> display label, overriding the
+      built-in defaults without editing the plugin. Example:
+      {"my-fast-model":"🚀 Fast","my-pro-model":"🧠 Pro"}
+    password: false
